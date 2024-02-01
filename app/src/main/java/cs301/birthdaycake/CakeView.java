@@ -95,34 +95,43 @@ public class CakeView extends SurfaceView {
      * This method will draw a birthday cake
      */
     @Override
-    public void onDraw(Canvas canvas)
-    {
-        //top and bottom are used to keep a running tally as we progress down the cake layers
+    public void onDraw(Canvas canvas) {
+        // Draw cake layers and frosting as before
         float top = cakeTop;
         float bottom = cakeTop + frostHeight;
 
-        //Frosting on top
+        // Frosting on top
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, frostingPaint);
         top += frostHeight;
         bottom += layerHeight;
 
-        //Then a cake layer
+        // First cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
         top += layerHeight;
         bottom += frostHeight;
 
-        //Then a second frosting layer
+        // Second frosting layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, frostingPaint);
         top += frostHeight;
         bottom += layerHeight;
 
-        //Then a second cake layer
+        // Second cake layer
         canvas.drawRect(cakeLeft, top, cakeLeft + cakeWidth, bottom, cakePaint);
 
-        //Now a candle in the center
-        drawCandle(canvas, cakeLeft + cakeWidth/2 - candleWidth/2, cakeTop);
+        // Calculate positions for two candles equidistant from each other and the edges
+        float candleGap = (cakeWidth - 2 * candleWidth) / 3;
+        float firstCandleLeft = cakeLeft + candleGap;
+        float secondCandleLeft = firstCandleLeft + candleWidth + candleGap;
 
+        // Draw the first candle
+        drawCandle(canvas, firstCandleLeft, cakeTop);
+
+        // Draw the second candle
+        drawCandle(canvas, secondCandleLeft, cakeTop);
     }//onDraw
 
-}//class CakeView
+
+}//onDraw
+
+ //class CakeView
 
