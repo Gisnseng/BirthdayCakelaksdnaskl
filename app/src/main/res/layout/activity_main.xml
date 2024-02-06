@@ -44,7 +44,9 @@
             <SeekBar
                 android:id="@+id/seekBar_candles"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:max="5"
+                android:progress="2" />
         </LinearLayout>
 
         <!-- Column 2: Switch Views -->
@@ -62,13 +64,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Frosting"
+                android:checked="true"
                 android:layout_marginBottom="8dp" />
 
             <Switch
                 android:id="@+id/switch_candles"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Candles" />
+                android:text="Candles"
+                android:checked="true" />
         </LinearLayout>
 
         <!-- Column 3: Button Views -->
