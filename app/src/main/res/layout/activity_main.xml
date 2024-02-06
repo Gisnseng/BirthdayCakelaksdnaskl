@@ -95,7 +95,10 @@
                 android:id="@+id/button_goodbye"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Goodbye" />
+                android:text="Goodbye"
+                android:onClick="goodbye" />
+            />
+
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>
