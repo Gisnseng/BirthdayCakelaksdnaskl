@@ -30,14 +30,16 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="3"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:paddingLeft="16dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How many candles?" />
+                android:text="How many candles?"
+                android:layout_marginBottom="8dp" />
 
             <SeekBar
                 android:id="@+id/seekBar_candles"
@@ -51,13 +53,16 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp">
 
             <Switch
                 android:id="@+id/switch_frosting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Frosting" />
+                android:text="Frosting"
+                android:layout_marginBottom="8dp" />
 
             <Switch
                 android:id="@+id/switch_candles"
@@ -72,13 +77,15 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:gravity="center_horizontal">
+            android:gravity="center_horizontal|right"
+            android:paddingRight="16dp">
 
             <Button
                 android:id="@+id/button_blow_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Blow Out" />
+                android:text="Blow Out"
+                android:layout_marginBottom="8dp" />
 
             <Button
                 android:id="@+id/button_goodbye"
