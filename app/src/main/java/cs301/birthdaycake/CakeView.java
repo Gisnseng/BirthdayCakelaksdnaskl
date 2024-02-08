@@ -6,6 +6,8 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.SurfaceView;
+import cs301.birthdaycake.CakeModel; // Import the CakeModel class
+
 
 public class CakeView extends SurfaceView {
 
@@ -40,8 +42,12 @@ public class CakeView extends SurfaceView {
      * ctor must be overridden here as per standard Java inheritance practice.  We need it
      * anyway to initialize the member variables
      */
+
+    private CakeModel cakeModel;
     public CakeView(Context context, AttributeSet attrs) {
         super(context, attrs);
+
+        cakeModel = new CakeModel();
 
         //This is essential or your onDraw method won't get called
         setWillNotDraw(false);
@@ -62,6 +68,10 @@ public class CakeView extends SurfaceView {
 
         setBackgroundColor(Color.WHITE);  //better than black default
 
+    }
+
+    public CakeModel getCakeModel() {
+        return cakeModel;
     }
 
     /**
@@ -133,5 +143,4 @@ public class CakeView extends SurfaceView {
 
 }//onDraw
 
- //class CakeView
-
+//class CakeView
