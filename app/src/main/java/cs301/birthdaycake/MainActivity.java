@@ -4,6 +4,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Create a new CakeController object, passing in the CakeView reference
         CakeController cakeController = new CakeController(cakeView);
+
+        // Retrieve a reference to the "Blow Out" button and set the CakeController as its click listener
+        Button blowOutButton = findViewById(R.id.button_blow_out); // Assuming the button ID is blow_out_button
+        blowOutButton.setOnClickListener(cakeController);
     }
 
     public void goodbye(View button) {
