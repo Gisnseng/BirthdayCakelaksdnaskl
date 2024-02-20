@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity {
         // Retrieve a reference to the SeekBar for candles and set the CakeController as its change listener
         SeekBar seekBarCandles = findViewById(R.id.seekBar_candles); // Ensure this ID matches your layout
         seekBarCandles.setOnSeekBarChangeListener(cakeController);
+
+        //part 2 Lab 4
+        cakeView.setOnTouchListener(cakeController);
     }
 
     public void goodbye(View button) {

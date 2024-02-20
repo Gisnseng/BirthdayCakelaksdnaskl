@@ -18,6 +18,8 @@ public class CakeView extends SurfaceView {
     private Paint innerFlamePaint = new Paint();
     private Paint wickPaint = new Paint();
 
+    private Paint balloonPaint = new Paint();
+
     /* Constants for the cake drawing */
     public static final float cakeTop = 400.0f;
     public static final float cakeLeft = 100.0f;
@@ -43,7 +45,8 @@ public class CakeView extends SurfaceView {
         candlePaint.setColor(0xFF32CD32);  // Lime green
         outerFlamePaint.setColor(0xFFFFD700);  // Gold
         innerFlamePaint.setColor(0xFF00A5FF);  // Orange
-        wickPaint.setColor(Color.BLACK);  // Black
+        wickPaint.setColor(Color.BLACK); // Black
+        balloonPaint.setColor(0xFF0000FF); // Blue
 
         setBackgroundColor(Color.WHITE);  // Set the background to white
     }
@@ -92,6 +95,11 @@ public class CakeView extends SurfaceView {
             float candleGap = cakeWidth / (cakeModel.numCandles + 1);
             float candleLeft = cakeLeft + candleGap * (i + 1) - candleWidth / 2;
             drawCandle(canvas, candleLeft, cakeTop);
+        }
+
+        if (cakeModel.balloon)
+        {
+            canvas.drawOval(cakeModel.balloonX - 30, cakeModel.balloonY - 50, cakeModel.balloonX + 30, cakeModel.balloonY + 50, balloonPaint);
         }
     }
 }
