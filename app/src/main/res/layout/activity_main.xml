@@ -88,7 +88,7 @@
                 android:id="@+id/button_blow_out"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Blow Out"
+                android:text="Extinguish"
                 android:layout_marginBottom="8dp" />
 
             <Button
