@@ -28,8 +28,8 @@ public class CakeView extends SurfaceView {
     public static final float candleWidth = 40.0f;
     public static final float wickHeight = 30.0f;
     public static final float wickWidth = 6.0f;
-    public static final float outerFlameRadius = 30.0f;
-    public static final float innerFlameRadius = 15.0f;
+    public static final float outerFlameRadius = 50.0f;
+    public static final float innerFlameRadius = 25.0f;
 
     public CakeView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -42,7 +42,7 @@ public class CakeView extends SurfaceView {
         frostingPaint.setColor(0xFFFFFACD);  // Lemon chiffon
         candlePaint.setColor(0xFF32CD32);  // Lime green
         outerFlamePaint.setColor(0xFFFFD700);  // Gold
-        innerFlamePaint.setColor(0xFFFFA500);  // Orange
+        innerFlamePaint.setColor(0xFF00A5FF);  // Orange
         wickPaint.setColor(Color.BLACK);  // Black
 
         setBackgroundColor(Color.WHITE);  // Set the background to white
@@ -61,11 +61,11 @@ public class CakeView extends SurfaceView {
                 // Draw the outer flame
                 float flameCenterX = left + candleWidth / 2;
                 float flameCenterY = bottom - wickHeight - candleHeight - outerFlameRadius / 3;
-                canvas.drawCircle(flameCenterX, flameCenterY, outerFlameRadius, outerFlamePaint);
+                canvas.drawOval(flameCenterX, flameCenterY, flameCenterX + outerFlameRadius + 30, flameCenterY + outerFlameRadius, outerFlamePaint);
 
                 // Draw the inner flame
                 flameCenterY += outerFlameRadius / 3;
-                canvas.drawCircle(flameCenterX, flameCenterY, innerFlameRadius, innerFlamePaint);
+                canvas.drawOval(flameCenterX, flameCenterY, flameCenterX + innerFlameRadius + 30, flameCenterY + innerFlameRadius, innerFlamePaint);
             }
 
             // Draw the wick
