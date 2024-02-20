@@ -38,7 +38,7 @@ public class CakeView extends SurfaceView {
         setWillNotDraw(false); // This call is essential to ensure onDraw() is called
 
         // Setup our palette
-        cakePaint.setColor(0xFFC755B5);  // Violet-red
+        cakePaint.setColor(0xFFFFD700);  // Gold
         frostingPaint.setColor(0xFFFFFACD);  // Lemon chiffon
         candlePaint.setColor(0xFF32CD32);  // Lime green
         outerFlamePaint.setColor(0xFFFFD700);  // Gold
