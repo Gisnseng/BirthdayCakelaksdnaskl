@@ -82,15 +82,6 @@ public class CakeView extends SurfaceView {
         }
     }
 
-    public boolean onTouchEvent(MotionEvent event){
-        float x = event.getX();
-        float y = event.getY();
-        cakeModel.touch = true;
-        cakeModel.touchX = x;
-        cakeModel.touchY = y;
-        invalidate();
-        return true;
-    }
 
     //write touch location
     public void drawTouch(Canvas canvas, float touchX, float touchY){
