@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.SurfaceView;
 
 public class CakeView extends SurfaceView {
@@ -17,6 +18,7 @@ public class CakeView extends SurfaceView {
     private Paint outerFlamePaint = new Paint();
     private Paint innerFlamePaint = new Paint();
     private Paint wickPaint = new Paint();
+    private Paint touchLocPaint = new Paint();
 
     private Paint balloonPaint = new Paint();
 
@@ -45,6 +47,8 @@ public class CakeView extends SurfaceView {
         candlePaint.setColor(0xFF32CD32);  // Lime green
         outerFlamePaint.setColor(0xFFFFD700);  // Gold
         innerFlamePaint.setColor(0xFF00A5FF);  // Orange
+        wickPaint.setColor(Color.BLACK);  // Black
+        touchLocPaint.setColor(Color.RED); //Red
         wickPaint.setColor(Color.BLACK); // Black
         balloonPaint.setColor(0xFF0000FF); // Blue
 
@@ -78,6 +82,23 @@ public class CakeView extends SurfaceView {
         }
     }
 
+    public boolean onTouchEvent(MotionEvent event){
+        float x = event.getX();
+        float y = event.getY();
+        cakeModel.touch = true;
+        cakeModel.touchX = x;
+        cakeModel.touchY = y;
+        invalidate();
+        return true;
+    }
+
+    //write touch location
+    public void drawTouch(Canvas canvas, float touchX, float touchY){
+        touchLocPaint.setTextSize(100);
+        canvas.drawText("("+ touchX +", "+ touchY +")",1300,800,touchLocPaint);
+
+    }
+
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
@@ -96,6 +117,11 @@ public class CakeView extends SurfaceView {
             float candleLeft = cakeLeft + candleGap * (i + 1) - candleWidth / 2;
             drawCandle(canvas, candleLeft, cakeTop);
         }
+
+        if(cakeModel.touch){
+            drawTouch(canvas, cakeModel.touchX, cakeModel.touchY);
+        }
+
 
         if (cakeModel.balloon)
         {

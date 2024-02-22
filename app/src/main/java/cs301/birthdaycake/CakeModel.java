@@ -1,5 +1,7 @@
 package cs301.birthdaycake;
 
+import android.view.MotionEvent;
+
 public class CakeModel {
     public boolean candlesLit = true;
     public int numCandles = 2;
@@ -9,4 +11,7 @@ public class CakeModel {
     public boolean balloon = false;
     public float balloonX = 0;
     public float balloonY = 0;
+    public boolean touch = false;
+    public float touchX;
+    public float touchY;
 }
