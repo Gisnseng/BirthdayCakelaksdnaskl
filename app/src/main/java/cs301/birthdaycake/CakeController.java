@@ -9,7 +9,6 @@ import android.widget.SeekBar;
 
 import java.util.ArrayList;
 
-public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener{
 public class CakeController implements View.OnClickListener, CompoundButton.OnCheckedChangeListener, SeekBar.OnSeekBarChangeListener, View.OnTouchListener {
     private CakeView cakeView;
     private CakeModel cakeModel;
@@ -18,7 +17,7 @@ public class CakeController implements View.OnClickListener, CompoundButton.OnCh
         this.cakeView = view;
         this.cakeModel = cakeView.getCakeModel();
     }
-
+//
     @Override
     public void onClick(View view) {
         // Check if candles are present and lit, then blow them out
